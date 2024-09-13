@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 import 'package:weather_app_with_clean_architecture/core/errors/faluires.dart';
 import 'package:weather_app_with_clean_architecture/core/srtings/faliures.dart';
 import 'package:weather_app_with_clean_architecture/features/weather/data/models/main_model.dart';
@@ -9,6 +10,7 @@ import 'package:weather_app_with_clean_architecture/features/weather/domain/usec
 part 'weather_event.dart';
 part 'weather_state.dart';
 
+@injectable
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   final GetAllWeatherUseCase getAllWeather;
   WeatherBloc({required this.getAllWeather}) : super(const WeatherState()) {

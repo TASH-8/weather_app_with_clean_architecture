@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:weather_app_with_clean_architecture/core/errors/exceptions.dart';
 import 'package:weather_app_with_clean_architecture/core/errors/faluires.dart';
 import 'package:weather_app_with_clean_architecture/core/network/network_info.dart';
@@ -6,6 +7,9 @@ import 'package:weather_app_with_clean_architecture/features/weather/data/dataso
 import 'package:weather_app_with_clean_architecture/features/weather/domain/entities/weather_main_entity.dart';
 import 'package:weather_app_with_clean_architecture/features/weather/domain/repositories/weather_repo.dart';
 
+
+
+@LazySingleton(as:WeatherRepository)
 class WeatherRepositoryImp implements WeatherRepository {
   final WeatherRemoteDataSource remoteDataSource;
   final NetworkInfo networkInfo;
